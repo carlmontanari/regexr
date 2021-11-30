@@ -37,14 +37,6 @@ window._native = function () {
 		document.getElementsByTagName('head')[0].appendChild(srv);
 	};
 
-	var carbon = function carbon(e) {
-		var srv = document.createElement('script');
-		srv.src = '//cdn.carbonads.com/carbon.js?serve=' + e['carbonZoneKey'] + '&placement=' + e['placement'];
-		srv.id = '_carbonads_js';
-
-		return srv;
-	};
-
 	var sanitize = function sanitize(ads) {
 		return ads.filter(function (ad) {
 			return Object.keys(ad).length > 0;
@@ -68,7 +60,6 @@ window._native = function () {
 	};
 
 	return {
-		carbon: carbon,
 		init: init,
 		options: options,
 		pixel: pixel,
